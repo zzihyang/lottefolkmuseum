@@ -37,29 +37,27 @@ $(document).ready(function () {
 
     //thrBt를 클릭하면
     thrBt.each(function(){
-        $(this).click(function(){
+        $(this).click(function(e){
             // 클래스 on이 있을 때
+            e.preventDefault();
             if($(this).hasClass('on')){
                 $(this).removeClass('on');
+                $(this).css('color','#555')
                 $(this).next('.thrD').stop().slideUp();
             }else{
                 $(this).addClass('on')
+                $(this).css('color','#1c7c57')
                 $(this).next('.thrD').stop().slideDown();
             }
 
-            //
             let twoDLth = $(this).parent().parent()
             
-            console.log(twoDLth)
-            console.log(gnbBgLth)
-            $(this).parent().parent().css('background','red')
             if(twoDLth>325){
                 gnbBg.css('height','427px')
             }else{
                 gnbBg.css('height','325px')
             }
 
-            //여기부터 한번 해보기
             $("#header .gnb > li .twoD").each(function(q){
 				longH = $(this).height() + 70;
 				if(maxH < longH) maxH = longH;
@@ -67,7 +65,6 @@ $(document).ready(function () {
 			$("#header .gnbBg").css("height",maxH + 15)
 			$("#header .gnbArea .leftArea").css("height",maxH - 120)
 			maxH = 0
-            //여기까지
         })
     })
 
@@ -127,7 +124,6 @@ $(document).ready(function () {
 
         //스크롤 된 값 구하기
         let winScrollT = $(window).scrollTop();
-        let winScrollT2 = $(window).scrollTop()+ $('#footer').outerHeight(true)+200;
         let winScrollT3 = $(window).scrollTop()+ $(window).height();
         let mCon1T = $('.mainCon1').offset().top;
         let mCon2T = $('.mainCon2').offset().top;
@@ -137,17 +133,17 @@ $(document).ready(function () {
 
 
         //스크롤 애니메이션
-        if (winScrollT >= mCon1T - 300 && winScrollT <= mCon2T - 300) {
+        if (winScrollT >= mCon1T - 600 && winScrollT <= mCon2T - 600) {
             $('.mainCon1 .mainTit').animate({ top: 0, opacity: 1 }, 600, 'swing')
             $('.mainCon1 .mainTxt').delay(200).animate({ top: 0, opacity: 1 }, 600, 'swing')
             $('.mainCon1 .mainCon1List').delay(400).animate({ top: 0, opacity: 1 }, 600, 'swing')
 
-        } else if (winScrollT >= mCon2T - 300 && winScrollT <= mCon3T - 300) {
+        } else if (winScrollT >= mCon2T - 600 && winScrollT <= mCon3T - 600) {
             $('.mainCon2 .mainTit').animate({ top: 0, opacity: 1 }, 600, 'swing')
             $('.mainCon2 .mainTxt').delay(200).animate({ top: 0, opacity: 1 }, 600, 'swing')
             $('.mainCon2 .mainCon2List').delay(400).animate({ top: 0, opacity: 1 }, 600, 'swing')
 
-        } else if (winScrollT >= mCon3T - 300 && winScrollT <= footT - 300) {
+        } else if (winScrollT >= mCon3T - 600 && winScrollT <= footT - 600) {
             $('.mainCon3 .mainTit').animate({ top: 0, opacity: 1 }, 600, 'swing')
             $('.mainCon3 .mainTxt').delay(200).animate({ top: 0, opacity: 1 }, 600, 'swing')
             $('.mainCon3 .mainNews').delay(400).animate({ top: 0, opacity: 1 }, 600, 'swing')

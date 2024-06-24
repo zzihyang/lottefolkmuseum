@@ -23,7 +23,8 @@ address{font-style: normal;}
 
 .container { width: 1170px; margin: 0 auto; position: relative; z-index: 20; } 
 
-.container::after { content: ""; display: block; clear: both; } 
+.container::after { content: ""; display: block; clear: both;} 
+
 /* 메인콘텐츠공통 */
 .mainCon { padding: 120px 0; } 
 .mainCon .inner { width: 1170px; margin: 0 auto; } 
@@ -51,18 +52,18 @@ address{font-style: normal;}
 #header.fixed h1 {top: 0px;transition: all 0.3s; }
 #header .gnbArea { float: left; margin-left: 127px;} 
 #header .openBt { display: none; } 
-#header .gnb { } 
 #header .gnb>li { float: left; padding: 0 20px; position: relative;} 
 #header .gnb>li>a { display: block; margin-top: 3px;padding: 15px 20px 38px; position: relative; font-size: 18px; font-weight: 500; color: #000;transition: all 0.3s; } 
-#header.fixed .gnb>li>a {padding: 28px 20px;}
+#header.fixed .gnb>li>a {padding: 28px 20px;color: #000;}
 #header .gnb>li.on>a::after { content: ""; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); width: 20px; height: 12px; background: url(../images/gnb_on_icon.png) no-repeat; } 
-#header .gnb>li .twoD {position: absolute; top: 71px; width: 100%; padding: 35px 0 35px 20px; display: none; border: 1px solid orange; } 
-#header .gnb>li .twoD a { display: block; padding: 15px 0; font-size: 18px;position: relative;} 
+#header .gnb>li .twoD {position: absolute; top: 71px; width: 100%; padding: 35px 0 35px 20px; display: none; } 
+#header .gnb>li .twoD a { display: block; padding: 15px 0; font-size: 18px;position: relative;color: #000;font-weight: 400;} 
 #header .gnb>li .twoD .thrBt::after{content: '';position: absolute;left: 84px;top: 50%;transform: translateY(-50%);width: 20px;height: 20px;background: url(../images/thrBt_bg.png)no-repeat center;}
 #header .gnb>li .twoD .thrBt.on::after{background: url(../images/thrBt_bg_on.png)no-repeat center;}
 #header .gnb>li .twoD .thrD{display: none;}
-#header .gnb>li .twoD .thrD a { padding: 0 0 10px 10px; font-size: 16px; line-height: 24px; color: #888;} 
+#header .gnb>li .twoD .thrD a { padding: 0 0 10px 10px; font-size: 16px; line-height: 24px; color: #888;color: #000;color: #000;font-weight: 400;} 
 
+#header .gnb li:hover>a{color: #1c7c57;font-weight: 500;}
 
 /* 헤더영역 - 운영시간 */
 #header .gnbArea .leftArea { position: absolute; left: 0; top: 71px; width: 225px; padding: 50px 0 85px; display: none;} 
@@ -215,9 +216,9 @@ address{font-style: normal;}
  .mHeader { display: block; background: white; height: 101px; position: relative; } 
  .mHeader .openBt { position: absolute; left: 30px; top: 50%; transform: translateY(-50%); background: transparent; border: 0; } 
  .mHeader .logo { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); } 
- .mMenuArea { display: block; position: fixed; left: -100%; top: 0; width: 100%; height: 100vh; z-index: 9999;background-color: white;} 
-
+ 
  /* 모바일상단 759~1000 */
+ .mMenuArea { display: block; position: fixed; left: -100%; top: 0; width: 100%; height: 100vh; z-index: 9999;background-color: white;} 
  .mMenuArea .top { background: #1c7c57; height: 100px; position: relative; } 
  .mMenuArea .top .loginBt { position: absolute; left: 30px; top: 50%; transform: translateY(-50%);height: 38px;; padding-left: 50px; font-size: 26px; line-height: 36px; font-weight: 400; color: #fff; background: url(../images/m_login_icon.png) no-repeat 0 0; } 
  .mMenuArea .top .closeBt { position: absolute; right: 30px; top: 50%; transform: translateY(-50%); border: 0; background: transparent; } 
@@ -230,15 +231,15 @@ address{font-style: normal;}
  .mMenuArea .links .icerink { background:#F8F8F8 url(../images/m_icerink_btn.gif) no-repeat center; } 
 
  /* 모바일메뉴 759~1000*/
- .mMenuArea .gnbArea { } 
- .mMenuArea .gnbArea .oneD { display: block; padding: 30px 38px; font-size: 26px; background: url(../images/m_oneD_icon.png) no-repeat right 5% top 50%; border-bottom: 1px solid #e1e1e1; } 
- .mMenuArea .gnbArea .twoD { padding: 0 30px; display: none; } 
- .mMenuArea .gnbArea .twoD>a { display: block; padding: 20px; font-size: 22px; border: 1px solid black; } 
- .mMenuArea .gnbArea .twoD .thrBt { background: url(../images/thrBt.png) no-repeat 95% 50%/20px auto; } 
- .mMenuArea .gnbArea .twoD .thrBt.on{background: url(../images/thrBt_on.png) no-repeat 95% 50%/ 20px auto;}
- .mMenuArea .gnbArea .twoD .thrD { padding: 15px 40px; display: none; } 
- .mMenuArea .gnbArea .twoD .thrD a { display: block; padding: 15px 0; font-size: 18px;} 
- .mainCon1List li { width: 49%; margin-left:2%; } 
+ .mMenuArea .oneD { display: block; padding: 30px 38px; font-size: 26px; background: url(../images/m_oneD_icon.png) no-repeat right 5% top 50%; border-bottom: 1px solid #e1e1e1;color: #000; } 
+ .mMenuArea .oneD.on{background-color: #f2f2f2;color: #1c7c57;font-weight: 700;}
+ .mMenuArea .twoD { padding: 0 30px; display: none; border-bottom: 1px solid #e1e1e1;background-color: #f2f2f2;} 
+ .mMenuArea .twoD>a { display: block; padding: 20px; font-size: 22px;border-bottom: 1px solid #e1e1e1;background-color: #f2f2f2;color: #000;} 
+ .mMenuArea .twoD .thrBt { background: url(../images/thrBt.png) no-repeat 95% 50%/30px; } 
+ .mMenuArea .twoD .thrBt.on{background: url(../images/thrBt_on.png) no-repeat 95% 50%/ 30px;font-weight: 500;}
+ .mMenuArea .twoD .thrD { padding: 15px 40px; display: none;border-bottom: 1px solid #e1e1e1;background-color: #f2f2f2; } 
+ .mMenuArea .twoD .thrD a { display: block; padding: 15px 0; font-size: 18px;} 
+ .mainCon1List li { width: 49%; margin-left:2%;color: #000; } 
 
  /* 메인콘텐츠 759~1000*/
  .mainCon2List li { width: 32%; margin-left:2%; } 
@@ -275,12 +276,15 @@ address{font-style: normal;}
 
 /* 451~758까지 */
 @media screen and (max-width : 758px) { /* 451공통 */
+ .mHeader {height: 50px;}
+ .mHeader .openBt img {width: 25px;}
+ .mHeader .logo img {width: 57px;margin-top: 5px;}
  .mainCon { padding: 60px 0 50px; } 
  .mainCon .mainTit { font-size: 23px; line-height: 30px; } 
  .mainCon .mainTit br { display: block; } 
  .mainCon .mainTxt { display: none; } 
 
- .mMenuArea .top .loginBt { left: 3%; padding-left: 25px; font-size: 14px; line-height: 20px; background-size: 15px auto; } 
+ .mMenuArea .top .loginBt { left: 3%; padding-left: 25px; font-size: 14px; height: 20px;line-height: 18px; background-size: 15px auto; } 
  .mMenuArea .top { height: 50px; } 
  .mMenuArea .top .closeBt { right: 3%; } 
  .mMenuArea .top .closeBt img { width: 15px; } 
@@ -292,8 +296,9 @@ address{font-style: normal;}
  .mMenuArea .gnbArea .twoD>a { padding: 13px 15px; font-size: 16px; } 
  .mMenuArea .gnbArea .twoD .thrD { padding: 10px 20px; } 
  .mMenuArea .gnbArea .twoD .thrD a { padding: 10px 0; font-size: 15px; } 
+ .swiper-button-prev, .swiper-button-next{display: none;}
  .mainTodayArea .mTit { padding-left: 20px; margin-right: 20px; font-size: 13px; background-size: 15px auto; } 
- .mainTodayArea .time:last-child { margin-left: 10px; paddi451758ng-left: 10px; } 
+ .mainTodayArea .time:last-child { margin-left: 10px; padding-left: 10px; } 
  .mainTodayArea .time .tit { font-size: 13px; } 
  .mainTodayArea .time .txt { font-size: 13px; margin-left: 10px; } 
 
@@ -335,12 +340,12 @@ address{font-style: normal;}
  .mainTodayArea .mTit { padding:0 0 0 20px; background-position: 0 8px; display: inline-block; } 
  
  .mainTodayArea .timeArea { display: inline-block; vertical-align: middle; } 
- 
- .mainTodayArea .time { display: block; width: 180px; padding-bottom: 10px; margin-bottom: 10px; border-bottom: 1px solid red; overflow: hidden; color: #000; } 
+
+ .mainTodayArea .time { display: block; width: 180px; padding-bottom: 10px; margin-bottom: 10px; overflow: hidden; color: #000; } 
  .mainTodayArea .time:last-child { padding: 0; margin: 0; border: 0; } 
  .mainTodayArea .time:last-child::before { display: none; } 
- .mainTodayArea .time .tit { width: 40%; text-align: left; } 
- .mainTodayArea .time .txt { width: 60%; margin-left: 0; text-align: left; } 
+ .mainTodayArea .time .tit { width: 40%; text-align: left;line-height: 31px; } 
+ .mainTodayArea .time .txt { width: 60%; margin-left: 0; text-align: left;line-height: 31px; } 
 
  #footer .top .links a{margin-left: 0;margin-right: 10px;font-size: 14px;line-height: 26px;}
  #footer .bottom .left address p{font-size: 13px;line-height: 22px;margin-top: 0;}
